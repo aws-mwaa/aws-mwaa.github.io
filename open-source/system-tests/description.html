@@ -1,0 +1,577 @@
+
+        <html>
+        <head>
+            <title>AWS Airflow - System test description</title>
+            <style>
+                * {
+                    font-family: Arial, sans-serif;
+                    color: black;
+                    font-size: 12px;
+                }
+                #aws-system-test-description h1 {
+                    font-size: 22px;
+                }
+                #aws-system-test-description ul {
+                    margin: 0;
+                    padding: 0 0 0 15px;
+                }
+                #aws-system-test-description table {
+                    border-spacing: 0;
+                    border-top: 1px solid #eaeded;
+                }
+                #aws-system-test-description table th {
+                    background-color: #fafafa;
+                    border-bottom: 1px solid #eaeded;
+                    padding: 13px 20px;
+                    font-weight: bold;
+                    font-size: 14px;
+                    line-height: 15px;
+                    height: 40px;
+                    padding: 0 20px 0 0;
+                    text-align: left;
+                }
+                #aws-system-test-description table td {
+                    border-bottom: 1px solid #eaeded;
+                    padding: 0 20px;
+                    height: 20px;
+                    padding: 4px 10px 4px 0;
+                }
+                #aws-system-test-description code {
+                    display: block;
+                    padding: 2px 5px;
+                    margin-bottom: 2px;
+                    background: #eee;
+                }
+            </style>
+        </head>
+        <body id="aws-system-test-description">
+            <h1>AWS Airflow - System test description</h1>
+            <table>
+                <tr>
+                    <th>System test</th>
+                    <th>Requirements</th>
+                    <th>Description</th>
+                    <th>Notes</th>
+                </tr>
+                
+            <tr>
+                <td>example_athena</td>
+                <td>N/A</td>
+                <td>Verify athena operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonS3FullAccess</li><li>AmazonAthenaFullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_batch</td>
+                <td><ul><li>IAM role ARN</li><li>Subnets</li><li>Security groups</li></ul></td>
+                <td>Verify batch operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AWSBatchFullAccess</li><li>CloudWatchLogsFullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_cloudformation</td>
+                <td>N/A</td>
+                <td>Verify cloudformation operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AWSCloudFormationFullAccess</li><li>AmazonSQSFullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_datasync</td>
+                <td><ul><li>IAM role ARN</li></ul></td>
+                <td>Verify datasync operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AWSDataSyncFullAccess</li><li>AmazonS3FullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_dms</td>
+                <td><ul><li>IAM role ARN</li><li>VPC id</li></ul></td>
+                <td>Verify dms operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonS3FullAccess</li><li>AmazonRDSFullAccess</li><li>AmazonEC2FullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"dms:*","Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_dynamodb_to_s3</td>
+                <td>N/A</td>
+                <td>Verify dynamodb to s3 operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonS3FullAccess</li><li>AmazonDynamoDBFullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_ec2</td>
+                <td>N/A</td>
+                <td>Verify ec2 operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonEC2FullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_ecs</td>
+                <td><ul><li>Cluster name</li><li>Subnets</li></ul></td>
+                <td>Verify ecs operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonECS_FullAccess</li><li>service-role/AmazonECSTaskExecutionRolePolicy</li><li>CloudWatchLogsFullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_ecs_fargate</td>
+                <td><ul><li>Subnets</li><li>Security groups</li></ul></td>
+                <td>Verify ecs fargate operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonECS_FullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_eks_with_fargate_in_one_step</td>
+                <td><ul><li>Cluster IAM role ARN</li><li>Fargate pod IAM role ARN</li><li>Public subnet id</li></ul></td>
+                <td>Verify eks with fargate in one step operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonEC2FullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"eks:*","Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":["iam:GetRole","iam:CreateServiceLinkedRole"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_eks_with_fargate_profile</td>
+                <td><ul><li>Cluster IAM role ARN</li><li>Fargate pod IAM role ARN</li><li>Public subnet id</li></ul></td>
+                <td>Verify eks with fargate profile operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonEC2FullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"eks:*","Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":["iam:GetRole","iam:CreateServiceLinkedRole"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_eks_with_nodegroup_in_one_step</td>
+                <td><ul><li>IAM role ARN</li><li>Subnets</li></ul></td>
+                <td>Verify eks with nodegroup in one step operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonEKSWorkerNodePolicy</li><li>AmazonEKSClusterPolicy</li><li>AmazonEC2ContainerRegistryReadOnly</li><li>IAMReadOnlyAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":["eks:Describe*","eks:List*","eks:CreateNodegroup","eks:DeleteNodegroup","eks:CreateCluster","eks:DeleteCluster","eks:TagResource","iam:CreateServiceLinkedRole"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_eks_with_nodegroups</td>
+                <td><ul><li>IAM role ARN</li><li>Subnets</li></ul></td>
+                <td>Verify eks with nodegroups operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonEKSWorkerNodePolicy</li><li>AmazonEKSClusterPolicy</li><li>AmazonEC2ContainerRegistryReadOnly</li><li>IAMReadOnlyAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":["eks:Describe*","eks:List*","eks:CreateNodegroup","eks:DeleteNodegroup","eks:CreateCluster","eks:DeleteCluster","eks:TagResource","iam:CreateServiceLinkedRole"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_emr</td>
+                <td>N/A</td>
+                <td>Verify emr operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonElasticMapReduceFullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_emr_eks</td>
+                <td><ul><li>IAM role ARN</li><li>Subnets</li><li>Job IAM role ARN</li></ul></td>
+                <td>Verify emr eks operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonEC2ReadOnlyAccess</li><li>IAMReadOnlyAccess</li><li>AmazonS3FullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":["emr-containers:*","eks:*","iam:GetRole","iam:UpdateAssumeRolePolicy","iam:CreateServiceLinkedRole"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_emr_serverless</td>
+                <td><ul><li>IAM role ARN</li></ul></td>
+                <td>Verify emr serverless operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonS3FullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":["emr-serverless:*","iam:CreateServiceLinkedRole"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_glue</td>
+                <td><ul><li>IAM role ARN</li></ul></td>
+                <td>Verify glue operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_LARGE</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>Amazons3FullAccess</li><li>AWSGlueConsoleFullAccess</li><li>CloudWatchLogsFullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_google_api_youtube_to_s3</td>
+                <td><ul><li>Secret ARN</li></ul></td>
+                <td>Verify google api youtube to s3 operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonS3FullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"secretsmanager:GetSecretValue","Effect":"Allow","Resource":"arn:aws:secretsmanager::*****:secret:&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_lambda</td>
+                <td><ul><li>IAM role ARN</li></ul></td>
+                <td>Verify lambda operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AWSLambda_FullAccess</li><li>CloudWatchLogsFullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_local_to_s3</td>
+                <td>N/A</td>
+                <td>Verify local to s3 operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonS3FullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_quicksight</td>
+                <td>N/A</td>
+                <td>Verify quicksight operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonS3FullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"quicksight:*","Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_rds_event</td>
+                <td>N/A</td>
+                <td>Verify rds event operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonRDSFullAccess</li><li>AmazonSNSFullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_rds_export</td>
+                <td><ul><li>KMS key id</li><li>IAM role ARN</li></ul></td>
+                <td>Verify rds export operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonRDSFullAccess</li><li>AmazonS3FullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_rds_instance</td>
+                <td>N/A</td>
+                <td>Verify rds instance operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonRDSFullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_rds_snapshot</td>
+                <td>N/A</td>
+                <td>Verify rds snapshot operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonRDSFullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_redshift</td>
+                <td>N/A</td>
+                <td>Verify redshift operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_2XLARGE</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonRedshiftFullAccess</li><li>AmazonVPCFullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_redshift_s3_transfers</td>
+                <td>N/A</td>
+                <td>Verify redshift s3 transfers operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_LARGE</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonRedshiftFullAccess</li><li>AmazonS3FullAccess</li><li>AmazonVPCFullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_s3</td>
+                <td>N/A</td>
+                <td>Verify s3 operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonS3FullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_sagemaker</td>
+                <td><ul><li>IAM role ARN</li></ul></td>
+                <td>Verify sagemaker operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_2XLARGE</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonS3FullAccess</li><li>AmazonSageMakerFullAccess</li><li>CloudWatchLogsFullAccess</li><li>IAMReadOnlyAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"ecr:*","Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_sagemaker_endpoint</td>
+                <td><ul><li>IAM role ARN</li></ul></td>
+                <td>Verify sagemaker endpoint operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_2XLARGE</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonS3FullAccess</li><li>AmazonSageMakerFullAccess</li><li>CloudWatchLogsFullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_sns</td>
+                <td>N/A</td>
+                <td>Verify sns operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonSNSFullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_sql_to_s3</td>
+                <td>N/A</td>
+                <td>Verify sql to s3 operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_LARGE</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonRedshiftFullAccess</li><li>AmazonS3FullAccess</li><li>AmazonVPCFullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_sqs</td>
+                <td>N/A</td>
+                <td>Verify sqs operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonSQSFullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_step_functions</td>
+                <td><ul><li>IAM role ARN</li></ul></td>
+                <td>Verify step functions operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AWSStepFunctionsFullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            </table>
+        </body>
+        </html>
