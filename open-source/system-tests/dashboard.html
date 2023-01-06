@@ -1,0 +1,393 @@
+
+    <html>
+        <head>
+            <title>AWS system tests - Last executions summary</title>
+            <style>
+                * {
+                    font-family: Arial, sans-serif;
+                    color: black;
+                    font-size: 12px;
+                }
+                h1 {
+                    font-size: 1.6em;
+                }
+                h2 {
+                    font-size: 1.3em;
+                }
+                #aws-system-test-summary {
+                    border-spacing: 0;
+                    border-top: 1px solid #eaeded;
+                }
+                #aws-system-test-summary th {
+                    background-color: #fafafa;
+                    border-bottom: 1px solid #eaeded;
+                    padding: 13px 20px;
+                    font-weight: bold;
+                    font-size: 14px;
+                    line-height: 15px;
+                    height: 40px;
+                    padding: 0 20px 0 0;
+                    text-align: left;
+                }
+                #aws-system-test-summary td {
+                    border-bottom: 1px solid #eaeded;
+                    height: 20px;
+                    padding: 4px 10px 4px 0;
+                    text-align: right;
+                }
+                #aws-system-test-summary .dot {
+                    height: 12px;
+                    width: 12px;
+                    /* Need to escape the percentage character */
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin: 0 1px;
+                }
+                #aws-system-test-disclaimer {
+                    font-style: italic;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Apache Airflow - Amazon Provider Package Health</h1>
+            <h2>View the health of AWS service integrations for Apache Airflow</h2>
+            <p>This live dashboard displays the current health of AWS service integrations available in the
+            <a href="https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/index.html">Amazon Provider
+            package</a> of Apache Airflow.<br />
+            The following table shows the last 10 runs of the
+            <a href="https://github.com/apache/airflow/blob/main/tests/system/providers/amazon/README.md">AWS System
+            Tests</a> using the latest <a href="https://github.com/apache/airflow">Apache Airflow codebase</a>.</p>
+            <table id="aws-system-test-summary">
+                <tr>
+                    <th>System test</th>
+                    <th>Invocations</th>
+                    <th>Success</th>
+                    <th>Failures</th>
+                    <th>Duration</th>
+                    <th>Last runs<br /><small>(latest on the right)</small></th>
+                </tr>
+                
+        <tr>
+            <td>example_athena</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h03m11s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:05 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 19:00 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_batch</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h02m38s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 19:00 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_cloudformation</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h03m02s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 19:00 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_datasync</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h00m44s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 17:55 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 22:55 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 04:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 08:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 12:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 18:55 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_dms</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h31m44s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 17:30 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 18:30 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:25 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:30 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:30 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:25 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:30 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:30 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:30 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:35 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_dynamodb_to_s3</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h00m59s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 22:55 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 04:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 08:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 12:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 19:00 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_ec2</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h01m45s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 19:00 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_ecs</td>
+            <td>48</td>
+            <td>47</td>
+            <td>1</td>
+            <td>00h01m10s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 22:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 04:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 12:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 19:00 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_ecs_fargate</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h01m59s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 04:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 19:00 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_eks_with_fargate_in_one_step</td>
+            <td>48</td>
+            <td>45</td>
+            <td>3</td>
+            <td>00h19m56s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 17:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 18:20 UTC"></span><span class="dot" style="background-color: red" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:15 UTC"></span><span class="dot" style="background-color: red" title="01/06/2023, 09:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:15 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_eks_with_fargate_profile</td>
+            <td>48</td>
+            <td>41</td>
+            <td>7</td>
+            <td>00h19m32s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 17:20 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 18:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:15 UTC"></span><span class="dot" style="background-color: red" title="01/06/2023, 00:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:20 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:20 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:20 UTC"></span><span class="dot" style="background-color: red" title="01/06/2023, 17:20 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_eks_with_nodegroup_in_one_step</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h18m37s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 17:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 18:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:15 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_eks_with_nodegroups</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h17m42s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 17:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 18:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:20 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_emr</td>
+            <td>48</td>
+            <td>0</td>
+            <td>48</td>
+            <td>00h00m35s</td>
+            <td><span class="dot" style="background-color: red" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: red" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: red" title="01/05/2023, 22:55 UTC"></span><span class="dot" style="background-color: red" title="01/05/2023, 23:55 UTC"></span><span class="dot" style="background-color: red" title="01/06/2023, 04:55 UTC"></span><span class="dot" style="background-color: red" title="01/06/2023, 08:55 UTC"></span><span class="dot" style="background-color: red" title="01/06/2023, 09:55 UTC"></span><span class="dot" style="background-color: red" title="01/06/2023, 12:55 UTC"></span><span class="dot" style="background-color: red" title="01/06/2023, 16:55 UTC"></span><span class="dot" style="background-color: red" title="01/06/2023, 18:55 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_emr_eks</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h20m28s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 17:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 18:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:20 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:20 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:15 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_emr_serverless</td>
+            <td>48</td>
+            <td>47</td>
+            <td>1</td>
+            <td>00h04m38s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:05 UTC"></span><span class="dot" style="background-color: red" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:05 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:05 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:05 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 19:00 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_glue</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h06m57s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:05 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:05 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:05 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:05 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:05 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:05 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:05 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:05 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:05 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 19:05 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_google_api_youtube_to_s3</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h00m39s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 22:55 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 04:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 08:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 18:55 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_lambda</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h00m44s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 22:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 12:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 18:55 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_local_to_s3</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h00m37s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 22:55 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 12:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 16:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 18:55 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_quicksight</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h01m17s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 19:00 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_rds_event</td>
+            <td>49</td>
+            <td>49</td>
+            <td>0</td>
+            <td>00h10m53s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:10 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:10 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:05 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:05 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 19:05 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_rds_export</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h14m50s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 17:10 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 18:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:10 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_rds_instance</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h24m26s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 17:20 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 18:20 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:20 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:25 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:20 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:20 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:20 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:20 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:25 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:25 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_rds_snapshot</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h15m30s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 17:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 18:10 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:15 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_redshift</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h16m59s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 17:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 18:10 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:15 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_redshift_s3_transfers</td>
+            <td>48</td>
+            <td>43</td>
+            <td>5</td>
+            <td>00h05m03s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:05 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:00 UTC"></span><span class="dot" style="background-color: red" title="01/06/2023, 09:00 UTC"></span><span class="dot" style="background-color: red" title="01/06/2023, 10:00 UTC"></span><span class="dot" style="background-color: red" title="01/06/2023, 13:00 UTC"></span><span class="dot" style="background-color: red" title="01/06/2023, 17:05 UTC"></span><span class="dot" style="background-color: red" title="01/06/2023, 19:00 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_s3</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h00m48s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 22:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 04:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:05 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 19:00 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_sagemaker</td>
+            <td>48</td>
+            <td>40</td>
+            <td>8</td>
+            <td>00h19m17s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 17:20 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 18:20 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:20 UTC"></span><span class="dot" style="background-color: red" title="01/05/2023, 23:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:20 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:20 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:20 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:20 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:20 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:20 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_sagemaker_endpoint</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h18m36s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 17:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 18:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:15 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:10 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:15 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:15 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_sns</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h00m35s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 22:55 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 18:55 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_sql_to_s3</td>
+            <td>48</td>
+            <td>47</td>
+            <td>1</td>
+            <td>00h05m15s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:05 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 13:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 19:00 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_sqs</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h00m39s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 22:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 05:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 10:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 12:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 18:55 UTC"></span></td>
+        </tr>
+    
+        <tr>
+            <td>example_step_functions</td>
+            <td>48</td>
+            <td>48</td>
+            <td>0</td>
+            <td>00h00m44s</td>
+            <td><span class="dot" style="background-color: green" title="01/05/2023, 18:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 19:00 UTC"></span><span class="dot" style="background-color: green" title="01/05/2023, 23:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 00:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 04:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 09:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 12:55 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 17:00 UTC"></span><span class="dot" style="background-color: green" title="01/06/2023, 18:55 UTC"></span></td>
+        </tr>
+    
+            </table>
+            <p>Last updated: <span id="last-updated"></span></p>
+            
+            <p id="aws-system-test-disclaimer">The data presented here resulted from the test procedures, inputs and
+            parameters as described
+            <a href="https://github.com/apache/airflow/blob/main/tests/system/providers/amazon/README.md">here</a> and
+            <a href="/open-source/system-tests/description.html">here</a>.
+            This data is provided as general information only. We do not guarantee the accuracy of this data.
+            Your experience and performance may vary.</p>
+            
+            <script>
+                document.querySelector('#last-updated').innerHTML = new Date('2023-01-06 19:10:21.996751+00:00').toLocaleString(undefined, {
+                    timeZoneName: 'short'
+                })
+            </script>
+        </body>
+    </html>
+    
