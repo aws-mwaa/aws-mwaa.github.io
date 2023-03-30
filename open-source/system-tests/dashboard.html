@@ -71,17 +71,17 @@
             <p>This live dashboard displays the current health of AWS service integrations available in the
             <a href="https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/index.html">Amazon Provider
             package</a> of Apache Airflow.<br />
-            The following table shows the last 10 runs of the
+            The following table shows data for all runs from the past 7 days of the
             <a href="https://github.com/apache/airflow/blob/main/tests/system/providers/amazon/README.md">AWS System
             Tests</a> using the latest <a href="https://github.com/apache/airflow">Apache Airflow codebase</a>.</p>
             <table id="aws-system-test-summary">
                 <tr>
                     <th>System test</th>
                     <th>Invocations</th>
-                    <th>Success</th>
+                    <th>Successes</th>
                     <th>Failures</th>
                     <th>Duration</th>
-                    <th>Last runs<br /><small>(latest on the right)</small></th>
+                    <th>Last 10 runs<br /><small>(latest on the right)</small></th>
                 </tr>
                 <tr>
                 <td>example_athena</td>
@@ -388,7 +388,7 @@
             Your experience and performance may vary.</p>
             
             <script>
-                document.querySelector('#last-updated').innerHTML = new Date('2023-03-30 18:05:37.690061+00:00').toLocaleString(undefined, {
+                document.querySelector('#last-updated').innerHTML = new Date('2023-03-30 19:05:36.527829+00:00').toLocaleString(undefined, {
                     timeZoneName: 'short'
                 })
             </script>
