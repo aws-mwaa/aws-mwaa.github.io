@@ -284,7 +284,7 @@
             </tr>
             <tr>
                 <td>example_emr_eks</td>
-                <td><ul><li>IAM role ARN</li><li>Subnets</li><li>Job IAM role ARN</li></ul></td>
+                <td><ul><li>IAM role ARN</li><li>Subnets</li><li>Job IAM role ARN</li><li>Job IAM role name</li></ul></td>
                 <td>Verify emr eks operator</td>
                 <td>
         <ul>
@@ -295,7 +295,7 @@
         </li>
             
         <li>Inline policies needed
-            <ul><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":["emr-containers:*","eks:*","iam:GetRole","iam:UpdateAssumeRolePolicy","iam:CreateServiceLinkedRole","iam:CreateOpenIDConnectProvider","iam:TagOpenIDConnectProvider"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
+            <ul><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":["emr-containers:*","eks:*","iam:GetRole","iam:UpdateAssumeRolePolicy","iam:CreateServiceLinkedRole","iam:CreateOpenIDConnectProvider","iam:DeleteOpenIDConnectProvider","iam:TagOpenIDConnectProvider"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
         </li>
         </ul></td>
             </tr>
