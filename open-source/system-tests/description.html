@@ -523,7 +523,7 @@
         </li>
             
         <li>Inline policies needed
-            <ul><li><code>{"Statement":[{"Action":"ecr:*","Effect":"Allow","Resource":"*"},{"Action":"ecr-public:*","Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
+            <ul><li><code>{"Statement":[{"Action":"ecr:*","Effect":"Allow","Resource":"*"},{"Action":"ecr-public:*","Effect":"Allow","Resource":"*"},{"Action":"sts:GetServiceBearerToken","Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
         </li>
         </ul></td>
             </tr>
