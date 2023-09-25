@@ -570,6 +570,23 @@
         </ul></td>
             </tr>
             <tr>
+                <td>example_sagemaker_notebook</td>
+                <td><ul><li>IAM role ARN</li></ul></td>
+                <td>Verify sagemaker notebook operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_2XLARGE</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonS3FullAccess</li><li>AmazonSageMakerFullAccess</li><li>CloudWatchLogsFullAccess</li><li>IAMReadOnlyAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"ecr:*","Effect":"Allow","Resource":"*"},{"Action":"ecr-public:*","Effect":"Allow","Resource":"*"},{"Action":"sts:GetServiceBearerToken","Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
                 <td>example_sagemaker_pipeline</td>
                 <td><ul><li>IAM role ARN</li></ul></td>
                 <td>Verify sagemaker pipeline operator</td>
