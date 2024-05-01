@@ -114,6 +114,23 @@
         </ul></td>
             </tr>
             <tr>
+                <td>example_bedrock_knowledge_base</td>
+                <td><ul><li>IAM role ARN</li></ul></td>
+                <td>Verify bedrock knowledge base operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonBedrockFullAccess</li><li>AmazonS3FullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"aoss:*","Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
                 <td>example_cloudformation</td>
                 <td>N/A</td>
                 <td>Verify cloudformation operator</td>
