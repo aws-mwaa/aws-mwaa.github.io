@@ -1,0 +1,1 @@
+[{"name": "example_sns", "invocation": 1.0, "success": 1.0, "failure": 0, "duration": 501.811324, "last_runs": [{"timestamp": 1721250000, "type": "success"}]}, {"name": "example_sqs", "invocation": 1.0, "success": 1.0, "failure": 0, "duration": 839.186977, "last_runs": [{"timestamp": 1721251800, "type": "success"}]}]
