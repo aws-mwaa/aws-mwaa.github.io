@@ -506,6 +506,23 @@
         </ul></td>
             </tr>
             <tr>
+                <td>example_kinesis_analytics</td>
+                <td><ul><li>IAM role ARN</li></ul></td>
+                <td>Verify kinesis analytics operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonKinesisAnalyticsFullAccess</li><li>AmazonS3FullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
                 <td>example_lambda</td>
                 <td><ul><li>IAM role ARN</li></ul></td>
                 <td>Verify lambda operator</td>
