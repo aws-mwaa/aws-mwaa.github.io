@@ -652,6 +652,9 @@
             <ul><li>AmazonRedshiftFullAccess</li><li>AmazonVPCFullAccess</li></ul>
         </li>
             
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"redshift-data:BatchExecuteStatement","Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
         </ul></td>
             </tr>
             <tr>
