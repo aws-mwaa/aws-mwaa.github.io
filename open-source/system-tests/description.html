@@ -252,6 +252,20 @@
         </ul></td>
             </tr>
             <tr>
+                <td>example_ecs</td>
+                <td><ul><li>Cluster name</li><li>Subnets</li></ul></td>
+                <td>Verify ecs operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonECS_FullAccess</li><li>service-role/AmazonECSTaskExecutionRolePolicy</li><li>CloudWatchLogsFullAccess</li></ul>
+        </li>
+            
+        </ul></td>
+            </tr>
+            <tr>
                 <td>example_ecs_fargate</td>
                 <td><ul><li>Subnets</li><li>Security groups</li></ul></td>
                 <td>Verify ecs fargate operator</td>
