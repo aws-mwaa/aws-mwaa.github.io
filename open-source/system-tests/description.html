@@ -551,6 +551,20 @@
         </ul></td>
             </tr>
             <tr>
+                <td>example_mwaa</td>
+                <td><ul><li>Environment name</li><li>Dag id</li></ul></td>
+                <td>Verify mwaa operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"airflow:InvokeRestApi","Effect":"Allow","Resource":"arn:aws:airflow::*****:role/SysTestMWAA_example_mwaa/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
                 <td>example_neptune</td>
                 <td>N/A</td>
                 <td>Verify neptune operator</td>
