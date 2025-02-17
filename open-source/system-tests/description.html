@@ -201,11 +201,11 @@
             <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
             
         <li>Managed policies needed
-            <ul><li>AmazonS3FullAccess</li><li>AmazonRDSFullAccess</li><li>AmazonEC2FullAccess</li></ul>
+            <ul><li>AmazonS3FullAccess</li><li>AmazonRDSFullAccess</li></ul>
         </li>
             
         <li>Inline policies needed
-            <ul><li><code>{"Statement":[{"Action":"dms:*","Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+            <ul><li><code>{"Statement":[{"Action":["dms:*","iam:CreateServiceLinkedRole"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
         </li>
         </ul></td>
             </tr>
@@ -222,7 +222,7 @@
         </li>
             
         <li>Inline policies needed
-            <ul><li><code>{"Statement":[{"Action":"dms:*","Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+            <ul><li><code>{"Statement":[{"Action":["dms:*","iam:CreateServiceLinkedRole"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
         </li>
         </ul></td>
             </tr>
