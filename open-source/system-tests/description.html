@@ -846,6 +846,23 @@
         </ul></td>
             </tr>
             <tr>
+                <td>example_ssm</td>
+                <td><ul><li>IAM role ARN</li></ul></td>
+                <td>Verify ssm operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonEC2FullAccess</li><li>AmazonSSMFullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":["iam:CreateInstanceProfile","iam:DeleteInstanceProfile","iam:GetInstanceProfile","iam:AddRoleToInstanceProfile","iam:RemoveRoleFromInstanceProfile","iam:PassRole"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
                 <td>example_step_functions</td>
                 <td><ul><li>IAM role ARN</li></ul></td>
                 <td>Verify step functions operator</td>
