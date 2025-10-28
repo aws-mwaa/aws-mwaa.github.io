@@ -560,7 +560,21 @@
             
             
         <li>Inline policies needed
-            <ul><li><code>{"Statement":[{"Action":"airflow:InvokeRestApi","Effect":"Allow","Resource":"arn:aws:airflow::*****:role/SysTestMWAA_example_mwaa/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+            <ul><li><code>{"Statement":[{"Action":"airflow:InvokeRestApi","Effect":"Allow","Resource":"arn:aws:airflow::*****:role/SysTestMWAAAirflow3_example_mwaa/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_mwaa_airflow2</td>
+                <td><ul><li>IAM role without invoke rest api ARN</li><li>Environment name</li><li>Dag id</li><li>Task id</li></ul></td>
+                <td>Verify mwaa airflow2 operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"airflow:InvokeRestApi","Effect":"Allow","Resource":"arn:aws:airflow::*****:role/SysTestMWAA_example_mwaa_airflow2/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
         </li>
         </ul></td>
             </tr>
