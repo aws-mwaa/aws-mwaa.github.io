@@ -131,6 +131,20 @@
         </ul></td>
             </tr>
             <tr>
+                <td>example_bedrock_guardrail</td>
+                <td>N/A</td>
+                <td>Verify bedrock guardrail operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":["bedrock:CreateGuardrail","bedrock:CreateGuardrailVersion","bedrock:DeleteGuardrail","bedrock:GetGuardrail","bedrock:ListGuardrails","bedrock:UpdateGuardrail"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
                 <td>example_bedrock_retrieve_and_generate</td>
                 <td><ul><li>IAM role ARN</li></ul></td>
                 <td>Verify bedrock retrieve and generate operator</td>
@@ -455,6 +469,9 @@
             <ul><li>AWSGlueConsoleFullAccess</li></ul>
         </li>
             
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":["glue:CreateTable","glue:DeleteTable","glue:GetTable","glue:GetTables","glue:CreatePartition","glue:DeletePartition","glue:GetPartition","glue:GetPartitions","glue:BatchCreatePartition","glue:BatchDeletePartition"],"Effect":"Allow","Resource":"*"},{"Action":["s3:GetObject","s3:PutObject","s3:ListBucket","s3:GetBucketLocation"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
         </ul></td>
             </tr>
             <tr>
@@ -589,6 +606,23 @@
             
         <li>Inline policies needed
             <ul><li><code>{"Statement":[{"Action":"airflow:InvokeRestApi","Effect":"Allow","Resource":"arn:aws:airflow::*****:role/SysTestMWAA_example_mwaa_airflow2/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_mwaa_serverless</td>
+                <td><ul><li>IAM role ARN</li></ul></td>
+                <td>Verify mwaa serverless operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonS3FullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":["airflow:CreateWorkflow","airflow:DeleteWorkflow","airflow:GetWorkflow","airflow:StartWorkflowRun","airflow:StopWorkflowRun","airflow:GetWorkflowRun","airflow:ListWorkflowRuns"],"Effect":"Allow","Resource":"*"},{"Action":"iam:PassRole","Condition":{"StringEquals":{"iam:PassedToService":"airflow.amazonaws.com"}},"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
         </li>
         </ul></td>
             </tr>
@@ -868,6 +902,23 @@
             <ul><li>SageMakerStudioProjectUserRolePolicy</li><li>SageMakerStudioProjectRoleMachineLearningPolicy</li><li>AmazonDataZoneFullUserAccess</li><li>AmazonSageMakerFullAccess</li></ul>
         </li>
             
+        </ul></td>
+            </tr>
+            <tr>
+                <td>example_sagemaker_unified_studio_notebook</td>
+                <td><ul><li>Env id</li><li>Domain id</li><li>Project id</li><li>Notebook id</li><li>Notebook b id</li><li>Region name</li></ul></td>
+                <td>Verify sagemaker unified studio notebook operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>SageMakerStudioProjectUserRolePolicy</li><li>SageMakerStudioProjectRoleMachineLearningPolicy</li><li>AmazonDataZoneFullUserAccess</li><li>AmazonSageMakerFullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":["datazone:StartNotebookRun","datazone:GetNotebookRun"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
         </ul></td>
             </tr>
             <tr>
