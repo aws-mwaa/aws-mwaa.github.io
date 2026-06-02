@@ -658,6 +658,20 @@
         </ul></td>
             </tr>
             <tr>
+                <td>example_opensearch_serverless</td>
+                <td>N/A</td>
+                <td>Verify opensearch serverless operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":["aoss:CreateCollection","aoss:DeleteCollection","aoss:BatchGetCollection","aoss:CreateSecurityPolicy","aoss:DeleteSecurityPolicy"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
                 <td>example_quicksight</td>
                 <td>N/A</td>
                 <td>Verify quicksight operator</td>
