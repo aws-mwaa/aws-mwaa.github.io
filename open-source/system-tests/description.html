@@ -114,6 +114,23 @@
         </ul></td>
             </tr>
             <tr>
+                <td>example_bedrock_agentcore</td>
+                <td><ul><li>IAM role ARN</li></ul></td>
+                <td>Verify bedrock agentcore operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonS3FullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":"bedrock-agentcore:*","Effect":"Allow","Resource":"*"},{"Action":"iam:CreateServiceLinkedRole","Effect":"Allow","Resource":"*"},{"Action":"iam:PutRolePolicy","Effect":"Allow","Resource":"arn:aws:iam::*:role/RoleSysTest_example_bedrock_agentcore"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
                 <td>example_bedrock_batch_inference</td>
                 <td><ul><li>IAM role ARN</li></ul></td>
                 <td>Verify bedrock batch inference operator</td>
