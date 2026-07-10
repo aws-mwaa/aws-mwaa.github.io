@@ -675,6 +675,23 @@
         </ul></td>
             </tr>
             <tr>
+                <td>example_neptune_analytics</td>
+                <td><ul><li>Neptune import IAM role ARN</li></ul></td>
+                <td>Verify neptune analytics operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonS3FullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":["neptune-graph:CreateGraph","neptune-graph:CreateGraphUsingImportTask","neptune-graph:DeleteGraph","neptune-graph:GetGraph","neptune-graph:ListGraphs","neptune-graph:UpdateGraph","neptune-graph:GetGraphSummary","neptune-graph:CreatePrivateGraphEndpoint","neptune-graph:DeletePrivateGraphEndpoint","neptune-graph:GetPrivateGraphEndpoint","neptune-graph:ListPrivateGraphEndpoints","neptune-graph:StartImportTask","neptune-graph:CancelImportTask","neptune-graph:GetImportTask","neptune-graph:ListImportTasks","neptune-graph:TagResource","neptune-graph:UntagResource","neptune-graph:ListTagsForResource"],"Effect":"Allow","Resource":"*"},{"Action":"iam:CreateServiceLinkedRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/aws-service-role/neptune-graph.amazonaws.com/*"},{"Action":&lt;resource_provided_as_requirement&gt;"ec2:DescribeVpcs","ec2:DescribeSubnets","ec2:DescribeSecurityGroups","ec2:DescribeVpcEndpoints","ec2:DescribeAvailabilityZones","ec2:CreateVpcEndpoint","ec2:ModifyVpcEndpoint","ec2:DeleteVpcEndpoints","ec2:CreateTags"],"Effect":"Allow","Resource":"*"},{"Action":["route53:AssociateVPCWithHostedZone","route53:DisassociateVPCFromHostedZone"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
                 <td>example_opensearch_serverless</td>
                 <td>N/A</td>
                 <td>Verify opensearch serverless operator</td>
