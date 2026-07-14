@@ -258,23 +258,6 @@
         </ul></td>
             </tr>
             <tr>
-                <td>example_dms_serverless</td>
-                <td><ul><li>IAM role ARN</li></ul></td>
-                <td>Verify dms serverless operator</td>
-                <td>
-        <ul>
-            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
-            
-        <li>Managed policies needed
-            <ul><li>AmazonS3FullAccess</li><li>AmazonRDSFullAccess</li></ul>
-        </li>
-            
-        <li>Inline policies needed
-            <ul><li><code>{"Statement":[{"Action":["dms:*","iam:CreateServiceLinkedRole"],"Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
-        </li>
-        </ul></td>
-            </tr>
-            <tr>
                 <td>example_dynamodb</td>
                 <td>N/A</td>
                 <td>Verify dynamodb operator</td>
@@ -720,65 +703,6 @@
         <li>Inline policies needed
             <ul><li><code>{"Statement":[{"Action":"quicksight:*","Effect":"Allow","Resource":"*"}],"Version":"2012-10-17"}</code></li></ul>
         </li>
-        </ul></td>
-            </tr>
-            <tr>
-                <td>example_rds_event</td>
-                <td>N/A</td>
-                <td>Verify rds event operator</td>
-                <td>
-        <ul>
-            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
-            
-        <li>Managed policies needed
-            <ul><li>AmazonRDSFullAccess</li><li>AmazonSNSFullAccess</li></ul>
-        </li>
-            
-        </ul></td>
-            </tr>
-            <tr>
-                <td>example_rds_export</td>
-                <td><ul><li>KMS key id</li><li>IAM role ARN</li></ul></td>
-                <td>Verify rds export operator</td>
-                <td>
-        <ul>
-            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
-            
-        <li>Managed policies needed
-            <ul><li>AmazonRDSFullAccess</li><li>AmazonS3FullAccess</li></ul>
-        </li>
-            
-        <li>Inline policies needed
-            <ul><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
-        </li>
-        </ul></td>
-            </tr>
-            <tr>
-                <td>example_rds_instance</td>
-                <td>N/A</td>
-                <td>Verify rds instance operator</td>
-                <td>
-        <ul>
-            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
-            
-        <li>Managed policies needed
-            <ul><li>AmazonRDSFullAccess</li></ul>
-        </li>
-            
-        </ul></td>
-            </tr>
-            <tr>
-                <td>example_rds_snapshot</td>
-                <td>N/A</td>
-                <td>Verify rds snapshot operator</td>
-                <td>
-        <ul>
-            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
-            
-        <li>Managed policies needed
-            <ul><li>AmazonRDSFullAccess</li></ul>
-        </li>
-            
         </ul></td>
             </tr>
             <tr>
