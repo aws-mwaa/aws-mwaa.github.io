@@ -19,33 +19,25 @@ Hello, I'm Niko Oliveira.
 `,
 	},
 
-	/* ================== sprawl ================== */
-	"sprawl": {
+	/* ================== problem ================== */
+	"problem": {
 		slide: `
-Let's illustrate the problem we're trying to solve:
-<br>
-<br>Day 1 - Single team, they try this thing called Airflow.
+Here is the problem we're trying to solve.
+
+Airflow usually starts as a tool one team stands up and runs for itself.
+But it catches on: another team wants one, then a few more, and before long everyone working with data wants a piece of it.
+
+So the question becomes: how do you give every team its own Airflow, without running an Airflow for every team?
+
+They want the shared platform, the shared operational knowledge, and the shared cost.
+What they don't want is to step on each other's toes.
 `,
-		steps: {
-			"day10": `
-Day 10 - They like it a lot and another team notices (marketing team)
-`,
-			"day100": `
-Day 100 - It starts to catch on, there's a handful of teams using it now (Finance, HR, Engineering teams).
-`,
-			"year-later": `
-One year later - suddenly your entire company wants to use Airflow!
-`,
-			"chaos": `
-It gets completely out of control. It's difficult to manage, scale, track spending, and so on with this many Airflow environments.
-`,
-		},
 	},
 
 	/* ================== two-ways ================== */
 	"two-ways": {
 		slide: `
-Historically there have been two major ways out of this problem
+Historically there have been two major ways out of this problem, and each one answers only half of the question.
 `,
 		steps: {
 			"own-env": `

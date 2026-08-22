@@ -99,24 +99,14 @@
 		.title-banner .sub { font-weight: 400; font-size: 0.75em; display: block; color: #0b3d42; }
 		.title-meta { color: var(--af-muted); font-size: 0.6em; margin-top: 2.2em; }
 
-		/* ---------- Pinwheel sprawl ---------- */
-		.pinwheel {
-			position: absolute;
-			pointer-events: none;
-			z-index: 4;
+		/* ---------- problem slide ---------- */
+		.problem-wrap { display: flex; align-items: center; min-height: 430px; }
+		.problem-q {
+			font-size: 1.72em; line-height: 1.6; font-weight: 700;
+			color: #fff; margin: 0;
 		}
-		.pinwheel img { width: 100%; }
-		.reveal .fragment.pin-pop {
-			opacity: 0; transform: scale(0);
-			transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
-		}
-		.reveal .fragment.pin-pop.visible { opacity: 1; transform: scale(1); }
-		@keyframes pin-spin { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
-		.pinwheel.spin img { animation: pin-spin 14s linear infinite; }
-		.pinwheel.spin.fast img { animation-duration: 6s; }
-		.pinwheel.spin.frantic img { animation-duration: 1.8s; }
-		.sprawl-day { font-size: 0.85em; }
-		.sprawl-day .day { color: var(--af-cyan); font-weight: 700; }
+		.problem-q .q-own  { color: #7fd8a3; }   /* what teams want */
+		.problem-q .q-cost { color: #ffd166; }   /* what it costs */
 
 		/* ---------- Two-ways slide ---------- */
 		.two-ways { display: flex; gap: 30px; margin-top: 10px; }
@@ -130,6 +120,11 @@
 			position: relative;
 		}
 		.way-card h3 { font-size: 0.75em; color: #fff; margin-bottom: 10px; }
+		/* card colours echo the question on the previous slide */
+		.way-card.way-many { border-color: #c9a83a; }
+		.way-card.way-many h3 { color: #ffd166; }
+		.way-card.way-one { border-color: var(--af-cyan-dim); }
+		.way-card.way-one h3 { color: var(--af-cyan); }
 		.way-art { height: 190px; position: relative; margin-bottom: 8px; }
 		.env-cell {
 			position: absolute; width: 84px; height: 62px;
@@ -223,10 +218,7 @@
 		#archsvg[data-step="orgadmin"] .comp.s-db,
 		#archsvg[data-step="orgadmin"] .comp.s-api,
 		#archsvg[data-step="orgadmin"] .comp.s-webui,
-		#archsvg[data-step="teamadmin"] .comp.s-workers,
-		#archsvg[data-step="teamadmin"] .comp.s-dagproc,
-		#archsvg[data-step="teamadmin"] .comp.s-triggerer,
-		#archsvg[data-step="teamadmin"] .comp.s-teamconfig { opacity: 1; }
+		#archsvg[data-step="teamadmin"] .comp.s-teamstack { opacity: 1; }
 
 		.arch-caption {
 			margin-top: 6px;
@@ -401,64 +393,25 @@
 				</div>
 			</section>
 
-			<!-- ============ 2. AIRFLOW SPRAWL ============ -->
-			<section id="sprawl" data-background-color="#050505" style="height:700px;">
+			<!-- ============ 2. THE PROBLEM ============ -->
+			<section id="problem" data-background-color="#050505" style="height:700px;">
 				<img class="summit-badge" src="talk-assets/summit_logo.png" alt="" />
-				<h2>The Problem: Airflow Sprawl</h2>
-				<!-- bullets evenly spaced down the full slide; each is fully readable when presented,
-				     pinwheels only ever land on bullets that have already had their moment -->
-				<div class="sprawl-day" style="position:absolute; top:115px; left:0; right:0; z-index:2;"><span class="day">Day 1:</span> First data team - &ldquo;Have you heard of this thing called Airflow?&rdquo;</div>
-				<div class="sprawl-day fragment" data-fragment-index="1" data-note-key="day10" style="position:absolute; top:255px; left:0; right:0; z-index:2;"><span class="day">Day 10:</span> Marketing team - &ldquo;Hey that looks great, we want one too!&rdquo;</div>
-				<div class="sprawl-day fragment" data-fragment-index="2" data-note-key="day100" style="position:absolute; top:395px; left:0; right:0; z-index:2;"><span class="day">Day 100:</span> Finance, HR, Engineering teams - &ldquo;Us too!&rdquo;</div>
-				<div class="sprawl-day fragment" data-fragment-index="3" data-note-key="year-later" style="position:absolute; top:535px; left:0; right:0; z-index:2;"><span class="day">One year later:</span> Every team working with data - &ldquo;What about us?!&rdquo;</div>
-
-				<!-- day 1: one tidy pinwheel (clear of bullet 1) -->
-				<div class="pinwheel spin" style="top:180px; right:60px; width:90px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-
-				<!-- day 10: two more; may cover bullet 1, never bullet 2 -->
-				<div class="pinwheel spin fragment pin-pop" data-fragment-index="1" style="top:100px; left:300px; width:90px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin fragment pin-pop" data-fragment-index="1" style="top:125px; left:860px; width:80px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-
-				<!-- day 100: four more; may cover bullets 1-2, never bullet 3 -->
-				<div class="pinwheel spin fragment pin-pop" data-fragment-index="2" style="top:240px; left:100px; width:100px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin fast fragment pin-pop" data-fragment-index="2" style="top:130px; left:550px; width:85px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin fragment pin-pop" data-fragment-index="2" style="top:320px; right:280px; width:80px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin fast fragment pin-pop" data-fragment-index="2" style="top:250px; left:920px; width:95px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-
-				<!-- one year later: seven more; may cover bullets 1-3, never bullet 4 -->
-				<div class="pinwheel spin fragment pin-pop" data-fragment-index="3" style="top:380px; left:200px; width:110px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin fast fragment pin-pop" data-fragment-index="3" style="top:400px; left:620px; width:95px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin fragment pin-pop" data-fragment-index="3" style="top:55px; left:60px; width:100px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin fast fragment pin-pop" data-fragment-index="3" style="top:180px; left:1060px; width:90px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin fragment pin-pop" data-fragment-index="3" style="top:425px; right:60px; width:105px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin fast fragment pin-pop" data-fragment-index="3" style="top:275px; left:430px; width:90px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin fragment pin-pop" data-fragment-index="3" style="top:15px; right:320px; width:85px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-
-				<!-- final click: total chaos, pinwheels everywhere including the last bullet -->
-				<div class="pinwheel spin frantic fragment pin-pop" data-fragment-index="4" data-note-key="chaos" style="top:500px; left:80px; width:150px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin frantic fragment pin-pop" data-fragment-index="4" style="top:530px; left:380px; width:130px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin frantic fragment pin-pop" data-fragment-index="4" style="top:490px; left:650px; width:145px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin frantic fragment pin-pop" data-fragment-index="4" style="top:545px; right:180px; width:125px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin frantic fragment pin-pop" data-fragment-index="4" style="top:600px; left:220px; width:120px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin frantic fragment pin-pop" data-fragment-index="4" style="top:610px; left:530px; width:110px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin frantic fragment pin-pop" data-fragment-index="4" style="top:620px; right:80px; width:135px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin frantic fragment pin-pop" data-fragment-index="4" style="top:60px; left:400px; width:140px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin frantic fragment pin-pop" data-fragment-index="4" style="top:170px; left:180px; width:160px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin frantic fragment pin-pop" data-fragment-index="4" style="top:200px; left:680px; width:150px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin frantic fragment pin-pop" data-fragment-index="4" style="top:330px; left:60px; width:125px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin frantic fragment pin-pop" data-fragment-index="4" style="top:350px; left:480px; width:135px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin frantic fragment pin-pop" data-fragment-index="4" style="top:310px; right:120px; width:145px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-				<div class="pinwheel spin frantic fragment pin-pop" data-fragment-index="4" style="top:80px; right:140px; width:120px;"><img src="talk-assets/pinwheel.png" alt=""/></div>
-
+				<h2>One Airflow, Many Teams</h2>
+				<div class="problem-wrap">
+					<p class="problem-q">
+						How do you give every team <span class="q-own">its own Airflow</span>,<br/>
+						without running <span class="q-cost">an Airflow for every team</span>?
+					</p>
+				</div>
 			</section>
 
-			<!-- ============ 3. HOW TO MAKE THIS WORK ============ -->
+			<!-- ============ 3. HISTORICALLY, TWO COMPROMISES ============ -->
 			<section id="two-ways" data-background-color="#050505">
 				<img class="summit-badge" src="talk-assets/summit_logo.png" alt="" />
-				<h2>How To Make This Work?</h2>
+				<h2>Historically, Two Compromises</h2>
 				<div class="two-ways">
-					<div class="way-card fragment fade-right" data-fragment-index="1" data-note-key="own-env">
-						<h3>1&#41; Every team gets their own environment</h3>
+					<div class="way-card way-many fragment fade-right" data-fragment-index="1" data-note-key="own-env">
+						<h3>An Airflow for every team</h3>
 						<div class="way-art">
 							<div class="env-cell" style="top:0;   left:4%;"><img src="talk-assets/pinwheel.png"/></div>
 							<div class="env-cell" style="top:0;   left:38%;"><img src="talk-assets/pinwheel.png"/></div>
@@ -474,8 +427,8 @@
 							<div class="con fragment" data-fragment-index="3">&ndash; Management burden grows per environment</div>
 						</div>
 					</div>
-					<div class="way-card fragment fade-left" data-fragment-index="4" data-note-key="monolith">
-						<h3>2&#41; One monolithic environment shared by all</h3>
+					<div class="way-card way-one fragment fade-left" data-fragment-index="4" data-note-key="monolith">
+						<h3>One Airflow for everyone</h3>
 						<div class="way-art">
 							<div class="mono-box">
 								<img class="big" src="talk-assets/pinwheel.png"/>
@@ -498,7 +451,6 @@
 				</div>
 			</section>
 
-			<!-- ============ 4. WORKING BACKWARDS: LOGOS ============ -->
 			<!-- ============ 4. WORKING BACKWARDS ============ -->
 			<section id="working-backwards" data-background-color="#050505" style="height:700px;">
 				<img class="summit-badge" src="talk-assets/summit_logo.png" alt="" />
@@ -526,7 +478,7 @@
 					<span class="muted">(like AWS cloud isolation)</span>
 				</div>
 				<div class="is fragment" data-note-key="is">
-					<span class="tag">It IS:</span> a soft isolation for co-operative teams within an organization
+					<span class="tag">It IS:</span> isolation for co-operative teams within an organization
 				</div>
 				<p class="fragment" data-note-key="summary" style="font-size:0.9em; margin-top:1.2em;">
 					Share the <strong>control plane</strong>, isolate the <strong>execution / data plane</strong>
@@ -581,15 +533,18 @@
 					<g class="comp s-executors">
 						<rect x="35" y="100" width="300" height="130" rx="10" fill="#12181c" stroke="#c9a83a" stroke-width="2"/>
 						<text x="185" y="219" fill="#ffd166" font-size="17" font-weight="bold" text-anchor="middle">Scheduler</text>
-						<rect x="50"  y="115" width="82" height="72" rx="8" fill="#1a222a" stroke="#3ba568" stroke-width="2"/>
-						<text x="91"  y="145" fill="#e8e8e8" font-size="14" text-anchor="middle">Executor</text>
-						<text x="91"  y="165" fill="#7fd8a3" font-size="14" text-anchor="middle" font-weight="bold">Team A</text>
 						<rect x="144" y="115" width="82" height="72" rx="8" fill="#1a222a" stroke="#7db8e8" stroke-width="2"/>
 						<text x="185" y="145" fill="#e8e8e8" font-size="14" text-anchor="middle">Executor</text>
 						<text x="185" y="165" fill="#7db8e8" font-size="14" text-anchor="middle" font-weight="bold">Global</text>
 						<rect x="238" y="115" width="82" height="72" rx="8" fill="#1a222a" stroke="#3ba568" stroke-width="2"/>
 						<text x="279" y="145" fill="#e8e8e8" font-size="14" text-anchor="middle">Executor</text>
 						<text x="279" y="165" fill="#7fd8a3" font-size="14" text-anchor="middle" font-weight="bold">Team B</text>
+					</g>
+					<!-- Executor Team A: own group so it stays highlighted while tasks route to the Team A worker -->
+					<g class="comp s-executors s-workers">
+						<rect x="50" y="115" width="82" height="72" rx="8" fill="#1a222a" stroke="#3ba568" stroke-width="2"/>
+						<text x="91" y="145" fill="#e8e8e8" font-size="14" text-anchor="middle">Executor</text>
+						<text x="91" y="165" fill="#7fd8a3" font-size="14" text-anchor="middle" font-weight="bold">Team A</text>
 					</g>
 
 					<!-- Executor config -->
@@ -610,7 +565,8 @@
 					</g>
 
 					<!-- API Server -->
-					<g class="comp s-api">
+					<!-- API Server: also lit on the worker, dag processor and triggerer steps, since all three talk to it -->
+					<g class="comp s-api s-workers s-dagproc s-triggerer">
 						<rect x="330" y="235" width="150" height="110" rx="10" fill="#12181c" stroke="#c9a83a" stroke-width="2"/>
 						<text x="405" y="295" fill="#ffd166" font-size="17" text-anchor="middle" font-weight="bold">API Server</text>
 					</g>
@@ -622,43 +578,45 @@
 					</g>
 
 					<!-- ================= team side ================= -->
-					<g class="comp s-workers">
+					<g class="comp s-teamstack s-workers">
 						<rect x="622" y="70" width="180" height="66" rx="8" fill="#1a222a" stroke="#c9a83a" stroke-width="1.5" transform="translate(8,8)"/>
 						<rect x="622" y="70" width="180" height="66" rx="8" fill="#12181c" stroke="#c9a83a" stroke-width="2"/>
 						<text x="712" y="98" fill="#e8e8e8" font-size="15" text-anchor="middle" font-weight="bold">Team A</text>
 						<text x="712" y="118" fill="#e8e8e8" font-size="14" text-anchor="middle">Task Execution Worker</text>
 					</g>
 
-					<g class="comp s-dagproc">
+					<g class="comp s-teamstack s-dagproc">
 						<rect x="622" y="170" width="180" height="66" rx="8" fill="#1a222a" stroke="#c9a83a" stroke-width="1.5" transform="translate(8,8)"/>
 						<rect x="622" y="170" width="180" height="66" rx="8" fill="#12181c" stroke="#c9a83a" stroke-width="2"/>
 						<text x="712" y="198" fill="#e8e8e8" font-size="15" text-anchor="middle" font-weight="bold">Team A</text>
 						<text x="712" y="218" fill="#e8e8e8" font-size="14" text-anchor="middle">Dag Processor</text>
 					</g>
 
-					<g class="comp s-triggerer">
+					<g class="comp s-teamstack s-triggerer">
 						<rect x="622" y="270" width="180" height="66" rx="8" fill="#1a222a" stroke="#c9a83a" stroke-width="1.5" transform="translate(8,8)"/>
 						<rect x="622" y="270" width="180" height="66" rx="8" fill="#12181c" stroke="#c9a83a" stroke-width="2"/>
 						<text x="712" y="298" fill="#e8e8e8" font-size="15" text-anchor="middle" font-weight="bold">Team A</text>
 						<text x="712" y="318" fill="#e8e8e8" font-size="14" text-anchor="middle">Triggerer</text>
 					</g>
 
-					<g class="comp s-teamconfig">
+					<g class="comp s-teamstack s-teamconfig">
 						<path d="M 940 66 h 34 l 14 14 v 40 h -48 z" fill="none" stroke="#00c7d4" stroke-width="2.5"/>
 						<line x1="948" y1="90" x2="980" y2="90" stroke="#00c7d4" stroke-width="2"/>
 						<line x1="948" y1="102" x2="980" y2="102" stroke="#00c7d4" stroke-width="2"/>
 						<text x="964" y="138" fill="#e8e8e8" font-size="14" text-anchor="middle">Team A</text>
 						<text x="964" y="155" fill="#e8e8e8" font-size="14" text-anchor="middle">Configuration</text>
 
-						<rect x="938" y="180" width="52" height="44" rx="6" fill="#123047" stroke="#6bb8ff" stroke-width="2"/>
-						<circle cx="964" cy="202" r="10" fill="none" stroke="#6bb8ff" stroke-width="2"/>
-						<text x="964" y="246" fill="#e8e8e8" font-size="14" text-anchor="middle">Team A</text>
-						<text x="964" y="263" fill="#e8e8e8" font-size="14" text-anchor="middle">Dag Bundle</text>
-
 						<rect x="940" y="288" width="48" height="44" rx="6" fill="#3a2f14" stroke="#ffd166" stroke-width="2"/>
 						<path d="M 952 300 l 12 8 l 12 -8 M 964 308 v 16" fill="none" stroke="#ffd166" stroke-width="2"/>
 						<text x="964" y="354" fill="#e8e8e8" font-size="14" text-anchor="middle">Team A</text>
 						<text x="964" y="371" fill="#e8e8e8" font-size="14" text-anchor="middle">Dependencies</text>
+					</g>
+					<!-- Team A Dag Bundle: own group so it highlights with the Dag Processor step too -->
+					<g class="comp s-teamstack s-teamconfig s-dagproc">
+						<rect x="938" y="181" width="52" height="44" rx="6" fill="#123047" stroke="#6bb8ff" stroke-width="2"/>
+						<circle cx="964" cy="203" r="10" fill="none" stroke="#6bb8ff" stroke-width="2"/>
+						<text x="964" y="246" fill="#e8e8e8" font-size="14" text-anchor="middle">Team A</text>
+						<text x="964" y="263" fill="#e8e8e8" font-size="14" text-anchor="middle">Dag Bundle</text>
 					</g>
 
 					<!-- ================= actors ================= -->
@@ -706,7 +664,7 @@
 					<!-- triggerer <-> api -->
 					<path class="edge s-triggerer" d="M 620 303 H 570 V 315 H 484" stroke="#8fa4ad" stroke-width="2" fill="none" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
 					<!-- bundle -> dagproc -->
-					<path class="edge s-dagproc" d="M 936 202 H 870 V 203 H 812" stroke="#8fa4ad" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+					<path class="edge s-dagproc" d="M 936 203 H 812" stroke="#8fa4ad" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
 					<!-- org admin -> shared -->
 					<path class="edge s-orgadmin" d="M 115 448 V 418" stroke="#8fa4ad" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
 					<!-- team admin -> team zone -->
