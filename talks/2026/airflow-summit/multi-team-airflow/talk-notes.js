@@ -13,8 +13,7 @@ Hello, I'm Niko Oliveira.
 <br>I'm an Apache Airflow Committer and PMC member and have been contributing to Airflow for over 5 years now.
 <br>I've also worked at Amazon for 9 years. I helped build and launch the MWAA service.
 <br>Shortly after that I segued into starting an OSS team within Amazon to develop OSS Airflow.
-<br>(Vincent intro)
-<br>
+<br>Hey all, I'm Vincent. I am also an Airflow PMC member and have been contributing to Airflow for about the same time: 5 years.
 <br>Today we're going to talk about multi-team Airflow, starting off with a bit of motivation and background.
 `,
 	},
@@ -145,6 +144,9 @@ UI Focus - teams only see their Dags, Tasks, Connections, etc.
 			"flexibility": `
 Flexibility - mix and match the above, team vs global namespace as needed.
 `,
+			"opt-in": `
+Whever possible don't complicate DB queries, critical sections or do unnecessary processing when disabled
+`,
 		},
 	},
 
@@ -260,7 +262,7 @@ But how does it work in practise? Let's take an example: Team A produces the cli
 			"prod-blocked": `
 3) What if the producer does not want? You have the equivalent option on the producer side: you can controls who may consume the events you are producing. If both are specified like in this example, both need to be satisfied.
 
-So thanks to assets and all these options you can control who talks to who.
+As we saw, thanks to assets and all these options we can control who talks to who.
 `,
 		},
 	},
@@ -268,7 +270,7 @@ So thanks to assets and all these options you can control who talks to who.
 	/* ================== misc-notes ================== */
 	"misc-notes": {
 		slide: `
-Some notes
+Before the demo, let'go quickly through some global notes about multi-team feature.
 `,
 		steps: {
 			"cli": `
@@ -279,7 +281,7 @@ There is a CLI to manage teams.
 Uniqueness of identifiers stay the same regardless of multi-team, they are global to the environment.
 `,
 			"advanced": `
-The setup needed to rnu Airflow in multi-team mode is pretty advanced and complex, so I would recommend it only for platform engineers at medium-to-large companies.
+The setup needed to run Airflow in multi-team mode is pretty advanced and complex, so I would recommend it only for platform engineers at medium-to-large companies.
 Even though nothing prevents you to try :)
 `,
 		},
@@ -308,6 +310,10 @@ The translation of this config in Airflow is this:
 - Then we configure the Dag bundles (one per team and one for the global scope)
 - Then we configure the different users (this is specific to simple auth manager so no need to focus in there)
 - Then lastly we configure the executors
+
+I am using Breeze (development tool) to run this demo so that's why I put all the config at once, in a prod setup, you might want to spread this config in different components.
+
+Another note: I'll be using the admin user for the most part during this demo, this is by convenience because I do things across teams but you can obviously do the same thing if you use a team specific user (you'll just be limited to their team)
 `,
 		},
 	},
@@ -336,7 +342,7 @@ Once it is successfull let's look at the logs.
 I am using Breeze here (development tool), LocalExecutor is running inside the scheduler and we are going to look at the sceduler component.
 Here we can see that example_global has been run using LocalExecutor.
 
-Let's now trigger example_team (which belongs to team2).
+Let's now trigger example_team2 (which belongs to team2).
 Same here, let's look at the logs.
 We can see nothing showed up in the scheduler logs so it did not use the LocalExecutor.
 Let's look at the celery worker logs.
@@ -409,16 +415,15 @@ Since it is a big feature, its release has been spawned across several Airflow r
 `,
 		steps: {
 			"v32": `
-3.2 laid clearly the foundation: concept of teams, association with bundles, per-team executors, variables, connections and pools
+3.2 laid clearly the foundation: concept of teams, association with bundles, etc.
 And even though this is not a Airflow core release, Keycloak auth manager was released at about the same time.
 Which is the auth manager compatible with multi-team.
 `,
 			"v33": `
-3.3 added the triggerer per team, XCom scoping, pool CLI and scheduler enforcement, asset event filtering and team metrics.
-3.2 and 3.3 delivered most of the features of multi-team.
+3.3 added other major features such as the triggerer per team (running one triggerer per team) and others.
 `,
 			"v34": `
-In 3.4 it is mostly follows up and nice to have such as the remaining UI elements, plugin support, command/secrets lookup for team config, plus auto-created team default pools.
+3.4 did not introduce major but there was a bunch of follows up and nice to have such as the UI elements we saw during the demo.
 `,
 			"experimental": `
 Quick note. This is still experimental through at least 3.4, feedback is super welcome, please try it, please break it. Thank you.
