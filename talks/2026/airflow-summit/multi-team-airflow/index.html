@@ -46,6 +46,9 @@
 
 		.reveal .slides section { text-align: left; }
 
+		/* center videos on video slides */
+		.reveal section > video { display: block; margin: 0 auto; }
+
 		.reveal ul { display: block; margin-left: 1em; }
 		.reveal li { margin: 0.45em 0; line-height: 1.35; }
 
@@ -306,6 +309,10 @@
 			font-size: 34px;
 			right: 18px; bottom: 12px;
 		}
+
+		/* ---------- demo video slides ---------- */
+		/* the slides default to text-align:left and a video is inline, so centre it explicitly */
+		.reveal section > video { display: block; margin: 0 auto; }
 
 		/* ---------- demo setup slide ---------- */
 		.demo-wrap { display: flex; gap: 24px; align-items: flex-start; }
