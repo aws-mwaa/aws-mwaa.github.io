@@ -371,13 +371,13 @@
 		.qr-card {
 			background: #0d1214; border: 1px solid #223035; border-radius: 14px;
 			padding: 18px 20px 24px; text-align: center;
-			display: flex; flex-direction: column; min-height: 320px;
+			display: flex; flex-direction: column; min-height: 320px; width: 300px;
 		}
-		.qr-card img { width: 200px; background: #fff; padding: 8px; border-radius: 8px; }
+		.qr-card img { width: 200px; background: #fff; padding: 8px; border-radius: 8px; margin: 0 auto; }
 		.qr-card .who { font-size: 0.75em; font-weight: 700; color: #fff; margin-top: 12px; }
-		.qr-card .lnk { font-size: 0.55em; color: var(--af-cyan); margin-top: 8px; flex-grow: 1; display: flex; align-items: center; justify-content: center; }
+		.qr-card .lnk { font-size: 0.65em; color: var(--af-cyan); margin-top: 8px; flex-grow: 1; display: flex; align-items: center; justify-content: center; }
 		.qr-col { text-align: center; }
-		.qr-under { font-size: 0.55em; color: var(--af-muted); margin-top: 13px; }
+		.qr-under { font-size: 0.65em; color: var(--af-muted); margin-top: 13px; }
 		.qr-pending {
 			width: 200px; height: 200px; border: 2px dashed #3a4a52; border-radius: 8px;
 			display: flex; align-items: center; justify-content: center;
@@ -698,37 +698,6 @@
 				<span class="fragment arch-step" data-arch-step="orgadmin" data-note-key="orgadmin"></span>
 				<span class="fragment arch-step" data-arch-step="teamadmin" data-note-key="teamadmin"></span>
 				<span class="fragment arch-step" data-arch-step="ui" data-note-key="ui"></span>
-
-				<div class="arch-caption active" data-for="intro">
-					<b>The lay of the land.</b> Global components on the left (blue). Team-scoped components on the right (green). These are logical groupings, not necessarily separate servers.
-				</div>
-				<div class="arch-caption" data-for="executors">
-                    <b>Executors, per team.</b> The scheduler runs one (or more) executors per team, each sending tasks only to its own team&rsquo;s compute.<br>Teams without their own executor fall back to the global executors.
-				</div>
-				<div class="arch-caption" data-for="execconfig">
-                    <b>Executor configuration.</b> Configured by the Org Admin on shared infra: <code>executor = LocalExecutor;team_a=CeleryExecutor;&hellip;</code> <br>Per team executor config must co-locate the Scheduler component.
-				</div>
-				<div class="arch-caption" data-for="workers">
-                    <b>Workers &amp; the Task Execution API.</b> Executors route tasks to the relevant team&rsquo;s compute.<br> Tasks fetching Variables/Connections/Secrets through the Task API only see their own team&rsquo;s (or global) resources.
-				</div>
-				<div class="arch-caption" data-for="dagproc">
-                    <b>Dag Processor &amp; Dag Bundles.</b> Parsing happens per team. Bundles carry a <code>team_name</code>.<br> This is how Dags (and their tasks) are assigned to teams.
-				</div>
-				<div class="arch-caption" data-for="triggerer">
-                    <b>Team-scoped Triggerer</b>. A Triggerer started with <code>airflow triggerer --team-name team_a</code>; only picks up its team_a&rsquo;s triggers.<br> A plain triggerer handles global, teamless, triggers.
-				</div>
-				<div class="arch-caption" data-for="teamconfig">
-                    <b>Team configuration &amp; dependencies.</b> Team components read their own <code>airflow.cfg</code> / env vars from their own compute. <br>Synced between teams only as much or as little as needed.
-				</div>
-				<div class="arch-caption" data-for="orgadmin">
-					<b>Organization Admin.</b> Manages the shared/global components and configuration.
-				</div>
-				<div class="arch-caption" data-for="teamadmin">
-                    <b>Team Admin.</b> Controls config, packages, bundles on team compute.<br> This may or may not be the same person as the Org Admin.
-				</div>
-				<div class="arch-caption" data-for="ui">
-					<b>UI &amp; Auth Manager.</b> Users hit the API server and it consults the Auth Manager to filter everything per team: users see only their team&rsquo;s Dags, Variables, Pools, etc, plus global resources. Requires a multi-team-aware auth manager (Keycloak is available today).
-				</div>
 
 			</section>
 
