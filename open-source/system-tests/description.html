@@ -83,6 +83,23 @@
         </ul></td>
             </tr>
             <tr>
+                <td>example_athena_spark</td>
+                <td><ul><li>Execution IAM role ARN</li></ul></td>
+                <td>Verify athena spark operator</td>
+                <td>
+        <ul>
+            <li>System: <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">BUILD_GENERAL1_MEDIUM</a></li>
+            
+        <li>Managed policies needed
+            <ul><li>AmazonS3FullAccess</li></ul>
+        </li>
+            
+        <li>Inline policies needed
+            <ul><li><code>{"Statement":[{"Action":["athena:CreateWorkGroup","athena:DeleteWorkGroup","athena:StartSession","athena:GetSession","athena:StartCalculationExecution","athena:GetCalculationExecution","athena:TerminateSession"],"Effect":"Allow","Resource":"arn:aws:athena::*****:workgroup/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li><li><code>{"Statement":[{"Action":"iam:PassRole","Effect":"Allow","Resource":"arn:aws:iam::*****:role/&lt;resource_provided_as_requirement&gt;"}],"Version":"2012-10-17"}</code></li></ul>
+        </li>
+        </ul></td>
+            </tr>
+            <tr>
                 <td>example_batch</td>
                 <td><ul><li>IAM role ARN</li><li>Subnets</li><li>Security groups</li></ul></td>
                 <td>Verify batch operator</td>
